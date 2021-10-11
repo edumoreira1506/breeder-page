@@ -1318,6 +1318,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@cig-platform/types@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.8.tgz#60165a722590e4690b26788bd31aca53b29ddbb5"
+  integrity sha512-iNvyHcLUu3fxvUvzFmKa7kBTYtu3TBKI1aH3679HWJpC2QF0i/GJQSdz0rI9chPhbMHMU3GQufOoVitVzf+ybw==
+  dependencies:
+    express "^4.17.1"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
