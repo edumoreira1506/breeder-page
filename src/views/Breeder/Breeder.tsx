@@ -1,13 +1,25 @@
 import React, { FC } from 'react'
 import { IBreeder } from '@cig-platform/types'
 
+import Header from '../../components/Header/Header'
+
+import { StyledContainer } from './Breeder.styles'
+
 export interface IBreederProps {
-  breeder: IBreeder;
+  breeder: Partial<IBreeder>;
 }
 
 const Breeder: FC<IBreederProps> = ({ breeder }: IBreederProps) => {
   return (
-    <h1>{breeder.name}</h1>
+    <StyledContainer>
+      {breeder.name && (
+        <Header
+          breederName={breeder.name}
+          breederImageUrl={breeder.profileImageUrl}
+          breederDescription={breeder.description}
+        />
+      )}
+    </StyledContainer>
   )
 }
 
