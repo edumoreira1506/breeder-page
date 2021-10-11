@@ -55,7 +55,7 @@ const Address: FC<AddressProps> = ({ address }: AddressProps) => {
         )}
       </StyledAddressFields>
       {address.latitude && address.latitude && (
-        <StyledMap>
+        <StyledMap data-testid="map">
           <GoogleMapReact
             bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
             defaultCenter={{ lat: address.latitude, lng: address.longitude }}
