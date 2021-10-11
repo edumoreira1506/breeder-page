@@ -39,7 +39,7 @@ describe('Address', () => {
   it('renders the number', () => {
     render(<Address {...DEFAULT_PROPS} />)
 
-    expect(screen.getByText('Número:')).toBeInTheDocument()
+    expect(screen.getByText('Nº:')).toBeInTheDocument()
     expect(screen.getByText(DEFAULT_PROPS.address.number)).toBeInTheDocument()
   })
 
