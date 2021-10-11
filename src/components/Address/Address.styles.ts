@@ -1,9 +1,15 @@
 import styled from 'styled-components'
-import { Colors, MAIN_FONT } from '@cig-platform/ui'
+import { Colors, createMinWidthMediaQuery, MAIN_FONT } from '@cig-platform/ui'
 
 export const StyledContainer = styled.div`
   font-family: ${MAIN_FONT};
   margin-top: 35px;
+
+  ${createMinWidthMediaQuery(`
+    max-width: 1020px;
+    padding-top: 35px;
+    margin: 0 auto;
+  `)}
 `
 
 export const StyledTitle = styled.h4`

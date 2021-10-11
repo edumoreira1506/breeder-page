@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors, MAIN_FONT } from '@cig-platform/ui'
+import { Colors, MAIN_FONT, createMinWidthMediaQuery } from '@cig-platform/ui'
 
 export const StyledContainer = styled.div`
   display: flex;
@@ -19,6 +19,10 @@ export const StyledName = styled.p`
   color: ${Colors.DarkGrey};
   margin: 10px 0;
   font-weight: bold;
+
+  ${createMinWidthMediaQuery(`
+    font-size: 2em;
+  `)}
 `
 
 export const StyledDescription = styled.p`
@@ -32,4 +36,8 @@ export const StyledDescription = styled.p`
   padding-left: 10px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+
+  ${createMinWidthMediaQuery(`
+    width: 320px;
+  `)}
 `
