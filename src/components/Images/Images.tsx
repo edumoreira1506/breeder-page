@@ -19,8 +19,6 @@ const Images: FC<ImagesProps> = ({ images }: ImagesProps) => {
   const openGallery = useCallback(() => setIsOpenGallery(true), [])
 
   const handleClickImage = useCallback((src: string) => {
-    console.log({ src })
-
     openGallery()
 
     const index = images.findIndex((image) => image.src === src)
