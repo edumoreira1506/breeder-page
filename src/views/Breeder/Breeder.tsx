@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { IBreeder } from '@cig-platform/types'
 
 import Header from '../../components/Header/Header'
+import Video from '../../components/Video/Video'
 
 import { StyledContainer } from './Breeder.styles'
 
@@ -18,6 +19,9 @@ const Breeder: FC<IBreederProps> = ({ breeder }: IBreederProps) => {
           breederImageUrl={breeder.profileImageUrl}
           breederDescription={breeder.description}
         />
+      )}
+      {breeder.mainVideo && (
+        <Video url={breeder.mainVideo} />
       )}
     </StyledContainer>
   )
