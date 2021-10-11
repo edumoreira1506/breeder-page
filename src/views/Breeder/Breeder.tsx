@@ -4,6 +4,7 @@ import { IBreeder } from '@cig-platform/types'
 import Header from '../../components/Header/Header'
 import Video from '../../components/Video/Video'
 import Images from '../../components/Images/Images'
+import Address from '../../components/Address/Address'
 
 import { StyledContainer } from './Breeder.styles'
 
@@ -31,6 +32,9 @@ const Breeder: FC<IBreederProps> = ({ breeder }: IBreederProps) => {
             alt: String(breeder.name)
           }))}
         />
+      )}
+      {breeder?.address && (
+        <Address address={breeder.address} />
       )}
     </StyledContainer>
   )
