@@ -12,7 +12,6 @@ export interface AddressProps {
 }
 
 const Address: FC<AddressProps> = ({ address }: AddressProps) => {
-  console.log(address)
   return (
     <>
       {address.latitude && address.latitude && (
