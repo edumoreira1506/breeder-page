@@ -6,7 +6,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@cig-platform/factories": "^0.0.6",
     "@cig-platform/types": "^0.0.9",
-    "@cig-platform/ui": "^0.1.44",
+    "@cig-platform/ui": "^0.1.46",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
