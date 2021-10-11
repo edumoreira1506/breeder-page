@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { IBreeder } from '@cig-platform/types'
 
-import './index.css'
+import Breeder from './views/Breeder/Breeder';
 
-import App from './App';
-
-(window as any).renderBreederPage = (containerId: string) => {
+(window as any).renderBreederPage = (containerId: string, breeder: IBreeder) => {
   ReactDOM.render(
-    <App />,
+    <Breeder breeder={breeder} />,
     document.getElementById(containerId),
   )
 };
@@ -18,8 +17,4 @@ import App from './App';
   if (targetDocument) {
     ReactDOM.unmountComponentAtNode(targetDocument)
   }
-}
-
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-  ReactDOM.render(<App />, document.getElementById('root'))
 }
