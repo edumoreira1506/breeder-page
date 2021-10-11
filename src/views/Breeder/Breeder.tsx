@@ -3,6 +3,7 @@ import { IBreeder } from '@cig-platform/types'
 
 import Header from '../../components/Header/Header'
 import Video from '../../components/Video/Video'
+import Images from '../../components/Images/Images'
 
 import { StyledContainer } from './Breeder.styles'
 
@@ -22,6 +23,14 @@ const Breeder: FC<IBreederProps> = ({ breeder }: IBreederProps) => {
       )}
       {breeder.mainVideo && (
         <Video url={breeder.mainVideo} />
+      )}
+      {breeder?.images?.length && (
+        <Images
+          images={breeder.images.map(b => ({
+            src: `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/images/${b.imageUrl}`,
+            alt: String(breeder.name)
+          }))}
+        />
       )}
     </StyledContainer>
   )
