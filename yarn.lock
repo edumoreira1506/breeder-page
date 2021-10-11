@@ -2127,10 +2127,17 @@
     "@cig-platform/types" "0.0.8"
     faker "^5.5.3"
 
-"@cig-platform/types@0.0.8", "@cig-platform/types@^0.0.8":
+"@cig-platform/types@0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.8.tgz#60165a722590e4690b26788bd31aca53b29ddbb5"
   integrity sha512-iNvyHcLUu3fxvUvzFmKa7kBTYtu3TBKI1aH3679HWJpC2QF0i/GJQSdz0rI9chPhbMHMU3GQufOoVitVzf+ybw==
+  dependencies:
+    express "^4.17.1"
+
+"@cig-platform/types@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.9.tgz#2efe969f2cb7d7b9a33ec333646c3551581e817a"
+  integrity sha512-FOKdaqE5vKuBMtpdWJ0xSSg8UwLFvuy/9k8fp/AY144lCG0xAnY6puphculNWLI7GqZRUliYBF2HZbZObqxnmw==
   dependencies:
     express "^4.17.1"
 
