@@ -21,7 +21,7 @@ const Header: FC<HeaderProps> = ({ breederName, breederImageUrl, breederDescript
         <StyledImageContainer>
           <RoundImage
             alt={breederName}
-            src={`https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/profile/${breederImageUrl}`}
+            src={breederImageUrl.includes('data:image') ? breederImageUrl : `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/profile/${breederImageUrl}`}
           />
         </StyledImageContainer>
       )}

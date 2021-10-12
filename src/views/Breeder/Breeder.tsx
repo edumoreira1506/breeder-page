@@ -28,7 +28,7 @@ const Breeder: FC<IBreederProps> = ({ breeder }: IBreederProps) => {
       {breeder?.images?.length && (
         <Images
           images={breeder.images.map(b => ({
-            src: `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/images/${b.imageUrl}`,
+            src: b.imageUrl.includes('data:image') ? b.imageUrl : `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/images/${b.imageUrl}`,
             alt: String(breeder.name)
           }))}
         />
