@@ -1519,18 +1519,18 @@
   dependencies:
     axios "^0.22.0"
 
-"@cig-platform/factories@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@cig-platform/factories/-/factories-0.0.6.tgz#8991d562e5cbae1014a86337c9b1dac9b6897c21"
-  integrity sha512-yUMu5g4gcTZ5KqbTFpCmmKZL9ngMkNpvP55m0UbmUWWrwVimXhuLKPaBt8VSZLRECvwEit3Nw310Xe9BgCQtog==
+"@cig-platform/factories@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@cig-platform/factories/-/factories-0.0.12.tgz#5f76ed0c29d3cb1e610b5338ef867f320a047c52"
+  integrity sha512-TPFE4tF8P7kX/7RZcjnPSzjYHjD2emen7rW5co2FGT+ivml2tVcArRGewfvMM4rZhV+3AUWg0ZBlElT/bcCGqA==
   dependencies:
-    "@cig-platform/types" "0.0.8"
+    "@cig-platform/types" "0.0.18"
     faker "^5.5.3"
 
-"@cig-platform/types@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.8.tgz#60165a722590e4690b26788bd31aca53b29ddbb5"
-  integrity sha512-iNvyHcLUu3fxvUvzFmKa7kBTYtu3TBKI1aH3679HWJpC2QF0i/GJQSdz0rI9chPhbMHMU3GQufOoVitVzf+ybw==
+"@cig-platform/types@0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.18.tgz#2ed342a81a8185e1d7465af451f6f61d245bfc69"
+  integrity sha512-IBVogxmDf/xtYaU0PtQkZnu34ZT9ftpRJk1+r7k7vMTgibbm4cIv7XCcOnARIMLVZNw79/w/AP2CIZbDtBPYMw==
   dependencies:
     express "^4.17.1"
 

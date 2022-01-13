@@ -6,7 +6,7 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-typescript": "^7.15.0",
     "@cig-platform/content-search-client": "^0.0.2",
-    "@cig-platform/factories": "^0.0.6",
+    "@cig-platform/factories": "^0.0.12",
     "@cig-platform/types": "^0.0.20",
     "@cig-platform/ui": "^0.1.46",
     "@testing-library/jest-dom": "^5.11.4",
