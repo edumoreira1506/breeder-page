@@ -1346,10 +1346,10 @@
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/types@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.9.tgz#2efe969f2cb7d7b9a33ec333646c3551581e817a"
-  integrity sha512-FOKdaqE5vKuBMtpdWJ0xSSg8UwLFvuy/9k8fp/AY144lCG0xAnY6puphculNWLI7GqZRUliYBF2HZbZObqxnmw==
+"@cig-platform/types@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.20.tgz#b55518ef8cd49f747073538e8bc6acda3ce1e761"
+  integrity sha512-RXW3wjljO2SQiUEvsmUeAb5rmtKZBwtKTLiVKgl7DxJ539U2njvu2jqVd8KL5SM4xIRJtP/LZ1KsMr6HXqw06Q==
   dependencies:
     express "^4.17.1"
 
