@@ -1,14 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-import BreederContainer from './containers/BreederContainer/BreederContainer';
+import BreederContainer from './containers/BreederContainer/BreederContainer'
+
+const queryClient = new QueryClient();
 
 (window as any).renderBreederPage = (containerId: string, breederId: string) => {
   const targetDocument = document.getElementById(containerId)
 
   if (targetDocument) {
     ReactDOM.render(
-      <BreederContainer breederId={breederId} />,
+      <QueryClientProvider client={queryClient}>
+        <BreederContainer breederId={breederId} />
+      </QueryClientProvider>,
       targetDocument,
     )
   }
