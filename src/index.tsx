@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { IBreeder } from '@cig-platform/types'
 
-import Breeder from './views/Breeder/Breeder';
+import BreederContainer from './containers/BreederContainer/BreederContainer';
 
-(window as any).renderBreederPage = (containerId: string, breeder: IBreeder) => {
+(window as any).renderBreederPage = (containerId: string, breederId: string) => {
   const targetDocument = document.getElementById(containerId)
 
   if (targetDocument) {
     ReactDOM.render(
-      <Breeder breeder={breeder} />,
+      <BreederContainer breederId={breederId} />,
       targetDocument,
     )
   }
