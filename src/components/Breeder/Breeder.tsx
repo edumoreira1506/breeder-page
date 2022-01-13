@@ -1,18 +1,18 @@
 import React, { FC } from 'react'
 import { IBreeder } from '@cig-platform/types'
 
-import Header from '../../components/Header/Header'
-import Video from '../../components/Video/Video'
-import Images from '../../components/Images/Images'
-import Address from '../../components/Address/Address'
+import Header from '../Header/Header'
+import Video from '../Video/Video'
+import Images from '../Images/Images'
+import Address from '../Address/Address'
 
 import { StyledContainer } from './Breeder.styles'
 
-export interface IBreederProps {
-  breeder: Partial<IBreeder>;
+interface BreederProps {
+  breeder: IBreeder;
 }
 
-const Breeder: FC<IBreederProps> = ({ breeder }: IBreederProps) => {
+const Breeder: FC<BreederProps> = ({ breeder }) => {
   return (
     <StyledContainer>
       {breeder.name && (
