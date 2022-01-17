@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
 import Breeder from '../../components/Breeder/Breeder'
 import useData from '../../hooks/useData'
@@ -12,10 +12,8 @@ const BreederContainer: FC<BreederContainerProps> = ({  breederId }: BreederCont
 
   if (isLoading || !data?.breeder) return null
 
-  const breeder = useMemo(() => data.breeder, [data.breeder])
-
   return (
-    <Breeder breeder={breeder} />
+    <Breeder breeder={data?.breeder} />
   )
 }
 
