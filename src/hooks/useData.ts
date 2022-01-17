@@ -1,5 +1,5 @@
 import { IBreeder, IPoultry } from '@cig-platform/types'
-import {  useQuery } from 'react-query'
+import { useQuery } from 'react-query'
 
 import ContentSearchClient from '../clients/ContentSearchClient'
 
