@@ -1,5 +1,16 @@
-module.exports = {
-  webpack: (config, env) => {
+const path = require("path");
+const fs = require("fs");
+const rewireBabelLoader = require("react-app-rewire-babel-loader");
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+
+module.exports = function override(config, env) {
+    config = rewireBabelLoader.include(
+      config,
+      resolveApp("node_modules/@cig-platform")
+    );
+
     config.optimization.runtimeChunk = false;
     config.optimization.splitChunks = {
       cacheGroups: {
@@ -13,5 +24,4 @@ module.exports = {
     config.plugins[5].options.moduleFilename = () => "static/css/main.css";
 
     return config;
-  },
 };
