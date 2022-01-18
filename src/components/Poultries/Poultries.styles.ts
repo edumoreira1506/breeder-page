@@ -27,19 +27,19 @@ export const StyledTitle = styled.p`
     content: "";
     position: absolute;
     background-color: ${Colors.Black};
-    width: calc(50vw - 110%);
+    width: 50vw;
     height: 2px;
     top: 50%;
   }
 
   &::before {
     left: 0;
-    transform: translate(-120%, -50%);
+    transform: translate(-102%,-50%);
   }
 
   &::after {
     right: 0;
-    transform: translate(120%, -50%);
+    transform: translate(102%,-50%);
   }
 `
 

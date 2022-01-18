@@ -36,6 +36,8 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [] }) => {
 
       <Poultries poultries={poultries} title="Aves" />
 
+      <Poultries poultries={poultries} title="Aves à venda" />
+
       {Boolean(breeder?.images?.length) && (
         <Images
           images={breeder?.images?.map(b => ({
