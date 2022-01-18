@@ -1512,6 +1512,15 @@
     "@cig-platform/types" "^0.0.20"
     axios "^0.24.0"
 
+"@cig-platform/context@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@cig-platform/context/-/context-0.1.7.tgz#b0558d40e37a2fd4eee3d8a4db4a415aadf3ca4b"
+  integrity sha512-yVK9R8vvgzjDY5YOjPi3LGaJ1HIOl02L8xNq3UWUJ0RUxFVXgK6I0qJcq9iMmDfp0KI1Nv0h/YdLFMEAYBl6rQ==
+  dependencies:
+    "@cig-platform/types" "^0.0.3"
+    react "^17.0.2"
+    use-context-selector "^1.3.9"
+
 "@cig-platform/decorators@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@cig-platform/decorators/-/decorators-0.0.1.tgz#6714481803ed94e8c46a68f51bd207b3129f6462"
@@ -1547,6 +1556,11 @@
   integrity sha512-RXW3wjljO2SQiUEvsmUeAb5rmtKZBwtKTLiVKgl7DxJ539U2njvu2jqVd8KL5SM4xIRJtP/LZ1KsMr6HXqw06Q==
   dependencies:
     express "^4.17.1"
+
+"@cig-platform/types@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.3.tgz#08a45c6907880bb722f4a08bac8b875cb37a6e1b"
+  integrity sha512-E3De9U1R7LrMi0mzQZZb4QyDXHBxvW3ngiV3h+1D3PMTTgE93k/Wi20hmuGjMiiy8372Wnii31ymP+arm5187A==
 
 "@cig-platform/ui@^0.1.72":
   version "0.1.72"
@@ -14555,6 +14569,11 @@ use-composed-ref@^1.0.0:
   integrity sha512-my1lNHGWsSDAhhVAT4MKs6IjBUtG6ZG11uUqexPH9PptiIZDQOzaF4f5tEbJ2+7qvNbtXNBbU3SfmN+fXlWDhg==
   dependencies:
     ts-essentials "^2.0.3"
+
+use-context-selector@^1.3.9:
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/use-context-selector/-/use-context-selector-1.3.9.tgz#d1527393839f0d790ccdd52e28e8f353b8be6c2e"
+  integrity sha512-YgzRyeFjoJXwFn2qLVAuIbV6EQ8DOuzu3SS/eiCxyAyvBhcn02jYSz8c5v22QQU3LW6Ez/Iyo62kKvS7Kdqt3A==
 
 use-isomorphic-layout-effect@^1.0.0:
   version "1.1.1"
