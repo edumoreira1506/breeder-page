@@ -9,7 +9,7 @@ export const StyledContainer = styled.main`
 export const StyledItems = styled.ul`
   position: fixed;
   top: 15px;
-  right: 85px;
+  right: 15px;
   margin: 0;
   padding: 0;
   display: flex;
