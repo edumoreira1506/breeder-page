@@ -8,7 +8,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 module.exports = function override(config, env) {
     config = rewireBabelLoader.include(
       config,
-      resolveApp("node_modules/@cig-platform")
+      resolveApp("node_modules/@cig-platform/decorators")
     );
 
     config.optimization.runtimeChunk = false;
