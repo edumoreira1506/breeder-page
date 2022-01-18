@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
 import { BsWhatsapp } from 'react-icons/bs'
+import { AiFillPhone } from 'react-icons/ai'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
@@ -35,6 +36,14 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
           <StyledItem key={contact.id}>
             <a target="_blank" href={`https://api.whatsapp.com/send?phone=55${contact.value.replace(/\D/g, '')}`} rel="noreferrer">
               <BsWhatsapp />
+            </a>
+          </StyledItem>
+        ))}
+
+        {contacts.filter((contact) => contact.type === 'PHONE').map(contact => (
+          <StyledItem key={contact.id}>
+            <a href={`tel:${contact.value.replace(/\D/g, '')}`}>
+              <AiFillPhone />
             </a>
           </StyledItem>
         ))}
