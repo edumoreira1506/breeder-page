@@ -1534,6 +1534,13 @@
   dependencies:
     express "^4.17.1"
 
+"@cig-platform/types@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.14.tgz#0ff5cf055a97da735b32ec4703f2f813306c063b"
+  integrity sha512-BLPzdGqZuDJWRjh/3jtHS1M6dMGJyKRZobnNhsSCbh/ZdnzYB1fKxGxsevXMe4ikQGlhSd60+T1zPsKHMJT+CQ==
+  dependencies:
+    express "^4.17.1"
+
 "@cig-platform/types@^0.0.20":
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.20.tgz#b55518ef8cd49f747073538e8bc6acda3ce1e761"
@@ -1541,11 +1548,12 @@
   dependencies:
     express "^4.17.1"
 
-"@cig-platform/ui@^0.1.46":
-  version "0.1.46"
-  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.46.tgz#be1789faf77289157b6956982f016eb5ead79e09"
-  integrity sha512-aNbe1cIeXxjSOnQDRfw206mBd+uDFBhLymWViZEqMRu76iy/4TNEXUB8VUqg7NYdESmt8Z8wJ3SZe+f9I6EGDg==
+"@cig-platform/ui@^0.1.71":
+  version "0.1.71"
+  resolved "https://registry.yarnpkg.com/@cig-platform/ui/-/ui-0.1.71.tgz#f9a8c3774f2a6331259a6e8e8a8c733da46a9c1f"
+  integrity sha512-qe/5cjlH+nZ7zM0uZDnzdiNzVv1gVbN/sA91d/4lM5sQBQBxQEn66JObpt3U1FQdkYlFQ1KBu+hRaLvMPlgXDg==
   dependencies:
+    "@cig-platform/types" "^0.0.14"
     "@testing-library/jest-dom" "^5.11.4"
     "@testing-library/react" "^11.1.0"
     "@testing-library/user-event" "^12.1.10"
@@ -1557,6 +1565,7 @@
     react-dom "^17.0.2"
     react-icons "^4.3.1"
     react-image-gallery "^1.2.7"
+    react-modal "^3.14.3"
     react-number-format "^4.7.3"
     react-scripts "4.0.3"
     react-slick "^0.28.1"
