@@ -25,4 +25,12 @@ describe('Hedaer', () => {
     expect(imageDocument).toBeInTheDocument()
     expect(imageDocument).toHaveAttribute('src', `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/profile/${breederImageUrl}`)
   })
+
+  it('renders the description', () => {
+    const description = 'I am the description!'
+
+    render(<Header {...DEFAULT_PROPS} breederDescription={description} />)
+
+    expect(screen.getByText(description)).toBeInTheDocument()
+  })
 })
