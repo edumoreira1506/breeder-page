@@ -1,18 +1,25 @@
 import React, { FC } from 'react'
-import { IBreeder } from '@cig-platform/types'
+import { IBreeder, IPoultry, IPoultryImage } from '@cig-platform/types'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
 import Images from '../Images/Images'
 import Address from '../Address/Address'
+import Poultries from '../Poultries/Poultries'
 
 import { StyledContainer } from './Breeder.styles'
 
-interface BreederProps {
-  breeder: IBreeder;
+export interface Poultry extends IPoultry {
+  images?: IPoultryImage[];
+  mainImage?: string;
 }
 
-const Breeder: FC<BreederProps> = ({ breeder }) => {
+interface BreederProps {
+  breeder: IBreeder;
+  poultries?: Poultry[];
+}
+
+const Breeder: FC<BreederProps> = ({ breeder, poultries = [] }) => {
   return (
     <StyledContainer>
       {breeder.name && (
@@ -22,9 +29,13 @@ const Breeder: FC<BreederProps> = ({ breeder }) => {
           breederDescription={breeder.description}
         />
       )}
+
       {breeder.mainVideo && (
         <Video url={breeder.mainVideo} />
       )}
+
+      <Poultries poultries={poultries} title="Aves" />
+
       {Boolean(breeder?.images?.length) && (
         <Images
           images={breeder?.images?.map(b => ({
@@ -33,6 +44,7 @@ const Breeder: FC<BreederProps> = ({ breeder }) => {
           })) ?? []}
         />
       )}
+
       {breeder?.address && (
         <Address address={breeder.address} />
       )}

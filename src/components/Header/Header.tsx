@@ -7,6 +7,7 @@ import {
   StyledName,
   StyledDescription,
 } from './Header.styles'
+import { createImageUrl } from '../../utils/url'
 
 export interface HeaderProps {
   breederName: string;
@@ -21,7 +22,7 @@ const Header: FC<HeaderProps> = ({ breederName, breederImageUrl, breederDescript
         <StyledImageContainer>
           <RoundImage
             alt={breederName}
-            src={breederImageUrl.includes('data:image') ? breederImageUrl : `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/profile/${breederImageUrl}`}
+            src={breederImageUrl.includes('data:image') ? breederImageUrl : createImageUrl({ folder: 'breeders', subfolder: 'profile', filename: breederImageUrl })}
           />
         </StyledImageContainer>
       )}
