@@ -25,12 +25,12 @@ const Breeder: FC<BreederProps> = ({ breeder }) => {
       {breeder.mainVideo && (
         <Video url={breeder.mainVideo} />
       )}
-      {breeder?.images?.length && (
+      {Boolean(breeder?.images?.length) && (
         <Images
-          images={breeder.images.map(b => ({
+          images={breeder?.images?.map(b => ({
             src: b.imageUrl.includes('data:image') ? b.imageUrl : `https://cig-maketplace.s3.sa-east-1.amazonaws.com/breeders/images/${b.imageUrl}`,
             alt: String(breeder.name)
-          }))}
+          })) ?? []}
         />
       )}
       {breeder?.address && (
