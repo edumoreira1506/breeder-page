@@ -72,10 +72,6 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
           <Video url={breeder.mainVideo} />
         )}
 
-        <Poultries poultries={poultries} title="Aves" />
-
-        <Poultries poultries={poultries} title="Aves à venda" />
-
         {Boolean(breeder?.images?.length) && (
           <Images
             images={breeder?.images?.map(b => ({
@@ -84,6 +80,10 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
             })) ?? []}
           />
         )}
+
+        <Poultries poultries={poultries} title="Aves" />
+
+        <Poultries poultries={poultries} title="Aves à venda" />
 
         {breeder?.address && (
           <Address address={breeder.address} />

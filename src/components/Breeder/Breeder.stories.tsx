@@ -18,6 +18,9 @@ Example.args = {
       profileImageUrl: 'placeholder-user.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci ac velit convallis tincidunt vel in massa. Nullam eu elit ac tellus molestie ultrices. Nullam elit ligula, cursus sed quam id, dignissim porta arcu. Donec id convallis neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }),
+    images: Array(5).fill({
+      imageUrl: '1642549113288-matte-circulo.jpg'
+    })
   },
   contacts: [
     {
