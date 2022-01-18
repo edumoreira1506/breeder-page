@@ -1,4 +1,4 @@
-import React, { useMemo, VFC } from 'react'
+import React, { useCallback, useMemo, VFC } from 'react'
 import { PoultriesCarousel } from '@cig-platform/ui'
 
 import { StyledCarousel, StyledContainer, StyledTitle } from './Poultries.styles'
@@ -7,6 +7,10 @@ import { createImageUrl } from '../../utils/url'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import 'react-image-gallery/styles/css/image-gallery.css'
+
+import { useGalleryDispatch } from '../../contexts/GalleryContext/GalleryContext'
+import { setFiles, setIsOpen } from '../../contexts/GalleryContext/galleryActions'
 
 type PoultriesProps = {
   poultries?: Poultry[];
@@ -19,17 +23,32 @@ const Poultries: VFC<PoultriesProps> = ({
 }: PoultriesProps) => {
   if (!poultries.length) return null
 
+  const dispatch = useGalleryDispatch()
+
   const formattedPoultries = useMemo(() => poultries.map((poultry) => ({
     ...poultry,
     mainImage: createImageUrl({ folder: 'poultries', subfolder: 'images', filename: poultry?.mainImage }) ?? ''
   })), [poultries])
+
+  const handleClickImage = useCallback((poultryId: string) => {
+    const poultry = formattedPoultries.find(p => p.id === poultryId)
+    const files = [
+      poultry?.mainImage,
+      ...(poultry?.images?.map(poultryImage =>
+        createImageUrl({ folder: 'poultries', filename: poultryImage.imageUrl, subfolder: 'images' })
+      ) ?? [])
+    ].filter(Boolean) as string[]
+
+    dispatch(setFiles(files))
+    dispatch(setIsOpen(true))
+  }, [formattedPoultries, dispatch])
 
   return (
     <StyledContainer>
       <StyledTitle>{title}</StyledTitle>
       <StyledCarousel>
         <PoultriesCarousel
-          onClickImage={console.log}
+          onClickImage={handleClickImage}
           poultries={formattedPoultries}
         />
       </StyledCarousel>
