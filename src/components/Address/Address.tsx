@@ -20,7 +20,7 @@ export interface AddressProps {
 
 const Address: FC<AddressProps> = ({ address }: AddressProps) => {
   return (
-    <StyledContainer>
+    <StyledContainer id="location">
       <StyledTitle>Onde fica o criatório?</StyledTitle>
       <StyledAddressFields>
         {address.city && (
