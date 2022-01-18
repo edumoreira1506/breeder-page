@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
 import { BsWhatsapp } from 'react-icons/bs'
 import { AiFillPhone } from 'react-icons/ai'
+import { HiLocationMarker } from 'react-icons/hi'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
@@ -9,6 +10,8 @@ import Images from '../Images/Images'
 import Address from '../Address/Address'
 import Poultries from '../Poultries/Poultries'
 import GalleryModal from '../GalleryModal/GalleryModal'
+
+import './breeder.css'
 
 import {
   StyledContainer,
@@ -47,6 +50,12 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
             </a>
           </StyledItem>
         ))}
+
+        <StyledItem>
+          <a href="#location">
+            <HiLocationMarker />
+          </a>
+        </StyledItem>
       </StyledItems>
       <GalleryProvider>
         <GalleryModal />

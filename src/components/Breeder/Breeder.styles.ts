@@ -4,15 +4,14 @@ import styled from 'styled-components'
 export const StyledContainer = styled.main`
   width: 100%;
   padding-top: 0.5em;
-  position: relative;
 `
 
 export const StyledItems = styled.ul`
-  position: absolute;
+  position: fixed;
+  top: 15px;
+  right: 85px;
   margin: 0;
   padding: 0;
-  right: 10px;
-  top: 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
