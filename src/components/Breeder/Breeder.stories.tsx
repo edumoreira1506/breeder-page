@@ -21,6 +21,9 @@ Example.args = {
   },
   poultries: Array(10).fill({
     ...poultryFactory(),
-    mainImage: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg'
+    mainImage: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg',
+    images: Array(5).fill({
+      imageUrl: '1634766823222-c4f8a3c6-713d-45f0-a492-49643cf32ed6.jpeg'
+    })
   })
 }
