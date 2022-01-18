@@ -14,11 +14,12 @@ export const StyledImageContainer = styled.div`
 `
 
 export const StyledName = styled.p`
-  font-size: 1.5em;
+  font-size: 1em;
   font-family: ${MAIN_FONT};
-  color: ${Colors.DarkGrey};
+  color: ${Colors.Black};
   margin: 10px 0;
   font-weight: bold;
+  text-transform: uppercase;
 
   ${createMinWidthMediaQuery(`
     font-size: 2em;
@@ -26,18 +27,14 @@ export const StyledName = styled.p`
 `
 
 export const StyledDescription = styled.p`
-  text-align: left;
+  text-align: center;
   font-family: ${MAIN_FONT};
   font-size: 0.8em;
-  font-style: italic;
-  font-weight: lighter;
-  color: ${Colors.DarkGrey};
-  border-left: solid 10px ${Colors.DarkGrey};
-  padding-left: 10px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  font-weight: 500;
+  color: ${Colors.Black};
+  width: 85%;
 
   ${createMinWidthMediaQuery(`
-    width: 320px;
+    width: 600px;
   `)}
 `
