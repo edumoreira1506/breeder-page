@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
-import { IBreeder, IPoultry, IPoultryImage } from '@cig-platform/types'
+import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
+import { BsWhatsapp } from 'react-icons/bs'
+import { AiFillPhone } from 'react-icons/ai'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
@@ -8,7 +10,11 @@ import Address from '../Address/Address'
 import Poultries from '../Poultries/Poultries'
 import GalleryModal from '../GalleryModal/GalleryModal'
 
-import { StyledContainer } from './Breeder.styles'
+import {
+  StyledContainer,
+  StyledItem,
+  StyledItems
+} from './Breeder.styles'
 import { GalleryProvider } from '../../contexts/GalleryContext/GalleryContext'
 
 export interface Poultry extends IPoultry {
@@ -19,11 +25,29 @@ export interface Poultry extends IPoultry {
 interface BreederProps {
   breeder: IBreeder;
   poultries?: Poultry[];
+  contacts?: IBreederContact[]
 }
 
-const Breeder: FC<BreederProps> = ({ breeder, poultries = [] }) => {
+const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) => {
   return (
     <StyledContainer>
+      <StyledItems>
+        {contacts.filter((contact) => contact.type === 'WHATS_APP').map(contact => (
+          <StyledItem key={contact.id}>
+            <a target="_blank" href={`https://api.whatsapp.com/send?phone=55${contact.value.replace(/\D/g, '')}`} rel="noreferrer">
+              <BsWhatsapp />
+            </a>
+          </StyledItem>
+        ))}
+
+        {contacts.filter((contact) => contact.type === 'PHONE').map(contact => (
+          <StyledItem key={contact.id}>
+            <a href={`tel:${contact.value.replace(/\D/g, '')}`}>
+              <AiFillPhone />
+            </a>
+          </StyledItem>
+        ))}
+      </StyledItems>
       <GalleryProvider>
         <GalleryModal />
 

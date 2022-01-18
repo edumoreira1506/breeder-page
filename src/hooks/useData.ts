@@ -1,10 +1,10 @@
-import { IBreeder, IPoultry } from '@cig-platform/types'
+import { IBreeder, IBreederContact, IPoultry } from '@cig-platform/types'
 import { useQuery } from 'react-query'
 
 import ContentSearchClient from '../clients/ContentSearchClient'
 
 interface Data {
-  breeder: IBreeder;
+  breeder: IBreeder & { contacts: IBreederContact[] };
   poultries: IPoultry[];
 }
 

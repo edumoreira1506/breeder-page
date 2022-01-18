@@ -7,13 +7,13 @@ export interface BreederContainerProps {
   breederId: string;
 }
 
-const BreederContainer: FC<BreederContainerProps> = ({  breederId }: BreederContainerProps) => {
+const BreederContainer: FC<BreederContainerProps> = ({ breederId }: BreederContainerProps) => {
   const { data, isLoading } = useData(breederId)
 
   if (isLoading || !data?.breeder) return null
 
   return (
-    <Breeder breeder={data?.breeder} />
+    <Breeder breeder={data?.breeder} contacts={data?.breeder?.contacts} />
   )
 }
 
