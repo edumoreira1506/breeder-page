@@ -1,12 +1,16 @@
 import styled from 'styled-components'
-import { createMinWidthMediaQuery } from '@cig-platform/ui'
+import { Colors, createMinWidthMediaQuery, DEFAULT_BORDER_RADIUS } from '@cig-platform/ui'
 
 export const StyledContainer = styled.div`
-  width: 100%;
-  height: 170px;
+  height: 150px;
+  background-color: ${Colors.Black};
+  padding: 10px;
+  border-radius: ${DEFAULT_BORDER_RADIUS};
+  width: 85%;
+  margin: 0 auto;
 
   ${createMinWidthMediaQuery(`
-    width: 690px;
+    width: 600px;
     height: 400px;
     margin: 0 auto;
   `)}
@@ -14,5 +18,7 @@ export const StyledContainer = styled.div`
   & > div {
     width: 100% !important;
     height: 100% !important;
+    overflow: hidden;
+    border-radius: ${DEFAULT_BORDER_RADIUS};
   }
 `
