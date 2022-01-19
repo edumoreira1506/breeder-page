@@ -34,19 +34,15 @@ interface BreederProps {
 
 const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) => {
   const handleShareBreeder = useCallback(async () => {
-    const url = 'http://cig-marketplace.herokuapp.com/login'
+    const url = 'https://cig-marketplace.herokuapp.com/login'
 
     if (navigator.share) {
       const shareDetails = { url, title: breeder.name, text: `${breeder.description}: ${url}` }
       
       try {
-        await navigator
-          .share(shareDetails)
-          .then(() =>
-            console.log('Hooray! Your content was shared to tha world')
-          )
+        await navigator.share(shareDetails)
       } catch (error) {
-        console.log(`Oops! I couldn't share to the world because: ${error}`)
+        console.error(error)
       }
     } else {
       copy(url)
