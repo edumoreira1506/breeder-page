@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
-import { BsWhatsapp } from 'react-icons/bs'
+import { BsWhatsapp, BsShareFill } from 'react-icons/bs'
 import { AiFillPhone } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
+import copy from 'copy-to-clipboard'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
@@ -32,6 +33,24 @@ interface BreederProps {
 }
 
 const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) => {
+  const handleShareBreeder = useCallback(async () => {
+    const url = 'https://cig-marketplace.herokuapp.com/login'
+
+    if (navigator.share) {
+      const shareDetails = { url, title: breeder.name, text: `${breeder.description}: ${url}` }
+      
+      try {
+        await navigator.share(shareDetails)
+      } catch (error) {
+        console.error(error)
+      }
+    } else {
+      copy(url)
+
+      alert('Link copiado com sucesso!')
+    }
+  }, [])
+  
   return (
     <StyledContainer>
       <StyledItems>
@@ -54,6 +73,12 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
         <StyledItem>
           <a href="#location">
             <HiLocationMarker />
+          </a>
+        </StyledItem>
+
+        <StyledItem>
+          <a onClick={handleShareBreeder}>
+            <BsShareFill />
           </a>
         </StyledItem>
       </StyledItems>
