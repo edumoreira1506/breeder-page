@@ -13,7 +13,7 @@ const BreederContainer: FC<BreederContainerProps> = ({ breederId }: BreederConta
   if (isLoading || !data?.breeder) return null
 
   return (
-    <Breeder breeder={data?.breeder} contacts={data?.breeder?.contacts} />
+    <Breeder breeder={data?.breeder} contacts={data?.breeder?.contacts} poultries={data?.poultries} />
   )
 }
 
