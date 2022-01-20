@@ -15,11 +15,13 @@ import { setFiles, setIsOpen } from '../../contexts/GalleryContext/galleryAction
 type PoultriesProps = {
   poultries?: Poultry[];
   title: string;
+  onViewPoultry?: (poultryId: string) => void;
 }
 
 const Poultries: VFC<PoultriesProps> = ({
   poultries = [],
-  title
+  title,
+  onViewPoultry
 }: PoultriesProps) => {
   if (!poultries.length) return null
 
@@ -50,6 +52,7 @@ const Poultries: VFC<PoultriesProps> = ({
         <PoultriesCarousel
           onClickImage={handleClickImage}
           poultries={formattedPoultries}
+          onViewPoultry={onViewPoultry}
         />
       </StyledCarousel>
     </StyledContainer>
