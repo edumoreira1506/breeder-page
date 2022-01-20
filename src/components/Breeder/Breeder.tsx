@@ -30,10 +30,16 @@ export interface Poultry extends IPoultry {
 interface BreederProps {
   breeder: IBreeder;
   poultries?: Poultry[];
-  contacts?: IBreederContact[]
+  contacts?: IBreederContact[];
+  onViewPoultry?: (a: { breederId: string; poultryId: string }) => void;
 }
 
-const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) => {
+const Breeder: FC<BreederProps> = ({
+  breeder,
+  poultries = [],
+  contacts = [],
+  onViewPoultry
+}) => {
   const handleShareBreeder = useCallback(async () => {
     const url = `${MARKETPLACE_URL}/breeders/${breeder.id}`
 
@@ -51,6 +57,10 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
       alert('Link copiado com sucesso!')
     }
   }, [])
+
+  const handleViewPoultry = useCallback((poultryId: string) => {
+    onViewPoultry?.({ breederId: breeder?.id ?? '', poultryId })
+  }, [breeder?.id, onViewPoultry])
   
   return (
     <StyledContainer>
@@ -107,9 +117,9 @@ const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) =
           />
         )}
 
-        <Poultries poultries={poultries} title="Aves" />
+        <Poultries onViewPoultry={handleViewPoultry} poultries={poultries} title="Aves" />
 
-        <Poultries poultries={poultries} title="Aves à venda" />
+        <Poultries onViewPoultry={handleViewPoultry} poultries={poultries} title="Aves à venda" />
 
         {breeder?.address && (
           <Address address={breeder.address} />
