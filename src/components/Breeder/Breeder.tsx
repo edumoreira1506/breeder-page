@@ -35,7 +35,7 @@ interface BreederProps {
 
 const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) => {
   const handleShareBreeder = useCallback(async () => {
-    const url = `${MARKETPLACE_URL}breeders/${breeder.id}`
+    const url = `${MARKETPLACE_URL}/breeders/${breeder.id}`
 
     if (navigator.share) {
       const shareDetails = { url, title: breeder.name, text: `${breeder.description}: ${url}` }
