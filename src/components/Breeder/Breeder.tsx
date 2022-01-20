@@ -27,7 +27,7 @@ export interface Poultry extends IPoultry {
   mainImage?: string;
 }
 
-interface BreederProps {
+export interface BreederProps {
   breeder: IBreeder;
   poultries?: Poultry[];
   contacts?: IBreederContact[];
