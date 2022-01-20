@@ -15,6 +15,7 @@ export const StyledItems = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  z-index: 9;
 `
 
 export const StyledItem = styled.li`
