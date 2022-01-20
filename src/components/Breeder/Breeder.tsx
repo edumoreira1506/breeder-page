@@ -11,6 +11,8 @@ import Images from '../Images/Images'
 import Address from '../Address/Address'
 import Poultries from '../Poultries/Poultries'
 import GalleryModal from '../GalleryModal/GalleryModal'
+import { GalleryProvider } from '../../contexts/GalleryContext/GalleryContext'
+import { MARKETPLACE_URL } from '../../constants/url'
 
 import './breeder.css'
 
@@ -19,7 +21,6 @@ import {
   StyledItem,
   StyledItems
 } from './Breeder.styles'
-import { GalleryProvider } from '../../contexts/GalleryContext/GalleryContext'
 
 export interface Poultry extends IPoultry {
   images?: IPoultryImage[];
@@ -34,7 +35,7 @@ interface BreederProps {
 
 const Breeder: FC<BreederProps> = ({ breeder, poultries = [], contacts = [] }) => {
   const handleShareBreeder = useCallback(async () => {
-    const url = 'https://cig-marketplace.herokuapp.com/login'
+    const url = `${MARKETPLACE_URL}breeders/${breeder.id}`
 
     if (navigator.share) {
       const shareDetails = { url, title: breeder.name, text: `${breeder.description}: ${url}` }
