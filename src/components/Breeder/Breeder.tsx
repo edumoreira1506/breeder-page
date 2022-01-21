@@ -1,9 +1,10 @@
-import React, { FC, useCallback } from 'react'
+import React, { FC, useCallback, useMemo } from 'react'
 import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
 import { BsWhatsapp, BsShareFill } from 'react-icons/bs'
 import { AiFillPhone } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
 import copy from 'copy-to-clipboard'
+import { LinksBar } from '@cig-platform/ui'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
@@ -18,8 +19,6 @@ import './breeder.css'
 
 import {
   StyledContainer,
-  StyledItem,
-  StyledItems
 } from './Breeder.styles'
 
 export interface Poultry extends IPoultry {
@@ -61,38 +60,30 @@ const Breeder: FC<BreederProps> = ({
   const handleViewPoultry = useCallback((poultryId: string) => {
     onViewPoultry?.({ breederId: breeder?.id ?? '', poultryId })
   }, [breeder?.id, onViewPoultry])
+
+  const linkBarItems = useMemo(() => ([
+    ...contacts.filter((contact) => contact.type === 'WHATS_APP').map(contact => ({
+      children: <BsWhatsapp />,
+      href: `https://api.whatsapp.com/send?phone=55${contact.value.replace(/\D/g, '')}`
+    })),
+    ...contacts.filter((contact) => contact.type === 'PHONE').map(contact => ({
+      children: <AiFillPhone />,
+      href: `tel:${contact.value.replace(/\D/g, '')}`
+    })),
+    {
+      children: <HiLocationMarker />,
+      href: '#location'
+    },
+    {
+      children: <BsShareFill />,
+      onClick: handleShareBreeder
+    }
+  ]), [contacts])
   
   return (
     <StyledContainer>
-      <StyledItems>
-        {contacts.filter((contact) => contact.type === 'WHATS_APP').map(contact => (
-          <StyledItem key={contact.id}>
-            <a target="_blank" href={`https://api.whatsapp.com/send?phone=55${contact.value.replace(/\D/g, '')}`} rel="noreferrer">
-              <BsWhatsapp />
-            </a>
-          </StyledItem>
-        ))}
-
-        {contacts.filter((contact) => contact.type === 'PHONE').map(contact => (
-          <StyledItem key={contact.id}>
-            <a href={`tel:${contact.value.replace(/\D/g, '')}`}>
-              <AiFillPhone />
-            </a>
-          </StyledItem>
-        ))}
-
-        <StyledItem>
-          <a href="#location">
-            <HiLocationMarker />
-          </a>
-        </StyledItem>
-
-        <StyledItem>
-          <a onClick={handleShareBreeder}>
-            <BsShareFill />
-          </a>
-        </StyledItem>
-      </StyledItems>
+      <LinksBar items={linkBarItems} />
+      
       <GalleryProvider>
         <GalleryModal />
 
