@@ -76,7 +76,6 @@ const Breeder: FC<BreederProps> = ({
     },
     {
       children: <BsShareFill />,
-      href: '',
       onClick: handleShareBreeder
     }
   ]), [contacts])
