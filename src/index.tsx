@@ -10,8 +10,8 @@ const queryClient = new QueryClient();
 
 (window as any).renderBreederPage = (
   containerId: string,
-  breederId: string,
-  onViewPoultry: BreederProps['onViewPoultry']
+  { breederId }: { breederId: string },
+  { onViewPoultry }: { onViewPoultry: BreederProps['onViewPoultry'] }
 ) => {
   const targetDocument = document.getElementById(containerId)
 
