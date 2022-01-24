@@ -6,6 +6,7 @@ import { HiLocationMarker } from 'react-icons/hi'
 import copy from 'copy-to-clipboard'
 import { LinksBar } from '@cig-platform/ui'
 import MicroFrontend from '@cig-platform/microfrontend-helper'
+import { BreederContactTypeEnum } from '@cig-platform/enums'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
@@ -69,11 +70,11 @@ const Breeder: FC<BreederProps> = ({
   }), [onViewPoultry, onEditPoultry])
 
   const linkBarItems = useMemo(() => ([
-    ...contacts.filter((contact) => contact.type === 'WHATS_APP').map(contact => ({
+    ...contacts.filter((contact) => contact.type === BreederContactTypeEnum.WHATS_APP).map(contact => ({
       children: <BsWhatsapp />,
       href: `https://api.whatsapp.com/send?phone=55${contact.value.replace(/\D/g, '')}`
     })),
-    ...contacts.filter((contact) => contact.type === 'PHONE').map(contact => ({
+    ...contacts.filter((contact) => contact.type === BreederContactTypeEnum.PHONE).map(contact => ({
       children: <AiFillPhone />,
       href: `tel:${contact.value.replace(/\D/g, '')}`
     })),
