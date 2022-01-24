@@ -11,14 +11,21 @@ const queryClient = new QueryClient();
 (window as any).renderBreederPage = (
   containerId: string,
   { breederId }: { breederId: string },
-  { onViewPoultry }: { onViewPoultry: BreederProps['onViewPoultry'] }
+  { onViewPoultry, onEditPoultry }: {
+    onViewPoultry: BreederProps['onViewPoultry'];
+    onEditPoultry: BreederProps['onEditPoultry'];
+  }
 ) => {
   const targetDocument = document.getElementById(containerId)
 
   if (targetDocument) {
     ReactDOM.render(
       <QueryClientProvider client={queryClient}>
-        <BreederContainer breederId={breederId} onViewPoultry={onViewPoultry} />
+        <BreederContainer
+          breederId={breederId}
+          onViewPoultry={onViewPoultry}
+          onEditPoultry={onEditPoultry}
+        />
       </QueryClientProvider>,
       targetDocument,
     )

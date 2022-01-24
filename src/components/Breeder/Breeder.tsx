@@ -32,12 +32,14 @@ export interface BreederProps {
   poultries?: Poultry[];
   contacts?: IBreederContact[];
   onViewPoultry?: (a: { breederId: string; poultryId: string }) => void;
+  onEditPoultry?: (a: { breederId: string; poultryId: string }) => void;
 }
 
 const Breeder: FC<BreederProps> = ({
   breeder,
   contacts = [],
-  onViewPoultry
+  onViewPoultry,
+  onEditPoultry
 }) => {
   const handleShareBreeder = useCallback(async () => {
     const url = `${MARKETPLACE_URL}/breeders/${breeder.id}`
@@ -57,17 +59,14 @@ const Breeder: FC<BreederProps> = ({
     }
   }, [])
 
-  const handleViewPoultry = useCallback((poultryId: string) => {
-    onViewPoultry?.({ breederId: breeder?.id ?? '', poultryId })
-  }, [breeder?.id, onViewPoultry])
-
   const microFrontendParams = useMemo(() => ({
     breederId: breeder?.id
   }), [breeder?.id])
 
   const microFrontendCallbacks = useMemo<Record<string, any>>(() => ({
-    onViewPoultry: handleViewPoultry
-  }), [handleViewPoultry])
+    onViewPoultry,
+    onEditPoultry,
+  }), [onViewPoultry, onEditPoultry])
 
   const linkBarItems = useMemo(() => ([
     ...contacts.filter((contact) => contact.type === 'WHATS_APP').map(contact => ({

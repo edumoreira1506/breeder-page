@@ -5,10 +5,15 @@ import useData from '../../hooks/useData'
 
 export interface BreederContainerProps {
   breederId: string;
-  onViewPoultry?: BreederProps['onViewPoultry']
+  onViewPoultry?: BreederProps['onViewPoultry'];
+  onEditPoultry?: BreederProps['onEditPoultry'];
 }
 
-const BreederContainer: FC<BreederContainerProps> = ({ breederId, onViewPoultry }: BreederContainerProps) => {
+const BreederContainer: FC<BreederContainerProps> = ({
+  breederId,
+  onViewPoultry,
+  onEditPoultry
+}: BreederContainerProps) => {
   const { data, isLoading } = useData(breederId)
 
   if (isLoading || !data?.breeder) return null
@@ -19,6 +24,7 @@ const BreederContainer: FC<BreederContainerProps> = ({ breederId, onViewPoultry 
       contacts={data?.breeder?.contacts}
       poultries={data?.poultries}
       onViewPoultry={onViewPoultry}
+      onEditPoultry={onEditPoultry}
     />
   )
 }
