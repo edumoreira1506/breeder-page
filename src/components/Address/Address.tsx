@@ -59,6 +59,7 @@ const Address: FC<AddressProps> = ({ address }: AddressProps) => {
           <GoogleMapReact
             bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
             defaultCenter={{ lat: address.latitude, lng: address.longitude }}
+            center={{ lat: address.latitude, lng: address.longitude }}
             defaultZoom={11}
           >
             <Pin lat={address.latitude} lng={address.longitude} />
