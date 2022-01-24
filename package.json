@@ -7,6 +7,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@cig-platform/content-search-client": "^0.0.3",
     "@cig-platform/context": "^0.1.7",
+    "@cig-platform/enums": "^0.0.1",
     "@cig-platform/factories": "^0.0.12",
     "@cig-platform/microfrontend-helper": "^0.0.2",
     "@cig-platform/types": "^0.0.20",
