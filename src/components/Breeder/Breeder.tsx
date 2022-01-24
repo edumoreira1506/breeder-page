@@ -5,20 +5,21 @@ import { AiFillPhone } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
 import copy from 'copy-to-clipboard'
 import { LinksBar } from '@cig-platform/ui'
+import MicroFrontend from '@cig-platform/microfrontend-helper'
 
 import Header from '../Header/Header'
 import Video from '../Video/Video'
 import Images from '../Images/Images'
 import Address from '../Address/Address'
-import Poultries from '../Poultries/Poultries'
 import GalleryModal from '../GalleryModal/GalleryModal'
 import { GalleryProvider } from '../../contexts/GalleryContext/GalleryContext'
-import { MARKETPLACE_URL } from '../../constants/url'
+import { MARKETPLACE_URL, POULTRY_CAROUSELS_PAGE_URL } from '../../constants/url'
 
 import './breeder.css'
 
 import {
   StyledContainer,
+  StyledPoultries
 } from './Breeder.styles'
 
 export interface Poultry extends IPoultry {
@@ -35,7 +36,6 @@ export interface BreederProps {
 
 const Breeder: FC<BreederProps> = ({
   breeder,
-  poultries = [],
   contacts = [],
   onViewPoultry
 }) => {
@@ -60,6 +60,14 @@ const Breeder: FC<BreederProps> = ({
   const handleViewPoultry = useCallback((poultryId: string) => {
     onViewPoultry?.({ breederId: breeder?.id ?? '', poultryId })
   }, [breeder?.id, onViewPoultry])
+
+  const microFrontendParams = useMemo(() => ({
+    breederId: breeder?.id
+  }), [breeder?.id])
+
+  const microFrontendCallbacks = useMemo<Record<string, any>>(() => ({
+    onViewPoultry: handleViewPoultry
+  }), [handleViewPoultry])
 
   const linkBarItems = useMemo(() => ([
     ...contacts.filter((contact) => contact.type === 'WHATS_APP').map(contact => ({
@@ -108,9 +116,15 @@ const Breeder: FC<BreederProps> = ({
           />
         )}
 
-        <Poultries onViewPoultry={handleViewPoultry} poultries={poultries} title="Aves" />
-
-        <Poultries onViewPoultry={handleViewPoultry} poultries={poultries} title="Aves à venda" />
+        <StyledPoultries id="poultry-carousels">
+          <MicroFrontend
+            params={microFrontendParams}
+            name="BreederPoultriesPage"
+            host={POULTRY_CAROUSELS_PAGE_URL}
+            containerId="poultry-carousels"
+            callbacks={microFrontendCallbacks}
+          />
+        </StyledPoultries>
 
         {breeder?.address && (
           <Address address={breeder.address} />
