@@ -15,6 +15,7 @@ export const Example = Template.bind({})
 Example.args = {
   breeder: {
     ...breederFactory({
+      id: '50aed6ec-8744-476e-a5b8-6d47d4435825',
       profileImageUrl: 'placeholder-user.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci ac velit convallis tincidunt vel in massa. Nullam eu elit ac tellus molestie ultrices. Nullam elit ligula, cursus sed quam id, dignissim porta arcu. Donec id convallis neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }),

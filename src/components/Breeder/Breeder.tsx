@@ -16,6 +16,9 @@ import GalleryModal from '../GalleryModal/GalleryModal'
 import { GalleryProvider } from '../../contexts/GalleryContext/GalleryContext'
 import { MARKETPLACE_URL, POULTRY_CAROUSELS_PAGE_URL } from '../../constants/url'
 
+import 'slick-carousel/slick/slick.css' 
+import 'slick-carousel/slick/slick-theme.css'
+
 import './breeder.css'
 
 import {
