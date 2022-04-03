@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from 'react'
+import React, { FC, ReactNode, useCallback, useMemo } from 'react'
 import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
 import { BsWhatsapp, BsShareFill } from 'react-icons/bs'
 import { AiFillPhone } from 'react-icons/ai'
@@ -63,6 +63,10 @@ const Breeder: FC<BreederProps> = ({
     }
   }, [])
 
+  const addressIsEmpty = useMemo(() => !Object.values(breeder?.address)?.filter(Boolean)?.length, [
+    breeder?.address
+  ])
+
   const microFrontendParams = useMemo(() => ({
     breederId: breeder?.id
   }), [breeder?.id])
@@ -81,7 +85,7 @@ const Breeder: FC<BreederProps> = ({
       children: <AiFillPhone data-testid="breeder-phone" />,
       href: `tel:${contact.value.replace(/\D/g, '')}`
     })),
-    {
+    addressIsEmpty ? undefined : {
       children: <HiLocationMarker data-testid="breeder-location" />,
       href: '#location'
     },
@@ -90,7 +94,12 @@ const Breeder: FC<BreederProps> = ({
       onClick: handleShareBreeder,
       identifier: 'breeder-share'
     }
-  ]), [contacts])
+  ].filter(Boolean) as {
+    children: ReactNode;
+    href?: string;
+    identifier?: string;
+    onClick?: () => any;
+  }[]), [contacts, addressIsEmpty])
   
   return (
     <StyledContainer>
@@ -130,7 +139,7 @@ const Breeder: FC<BreederProps> = ({
           />
         </StyledPoultries>
 
-        {breeder?.address && (
+        {!addressIsEmpty && (
           <Address address={breeder.address} />
         )}
       </GalleryProvider>
