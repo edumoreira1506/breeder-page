@@ -19,6 +19,7 @@ describe('<Breeder />', () => {
     expect(screen.getByText(DEFAULT_PROPS.breeder.name)).toBeInTheDocument()
     expect(screen.getByAltText(DEFAULT_PROPS.breeder.name)).toBeInTheDocument()
     expect(screen.getByText('Onde fica o criatório?')).toBeInTheDocument()
+    expect(screen.getByTestId('breeder-address-details')).toBeInTheDocument()
     expect(screen.getByText(DEFAULT_PROPS.breeder.address.city)).toBeInTheDocument()
     expect(screen.getByText(DEFAULT_PROPS.breeder.address.number)).toBeInTheDocument()
     expect(screen.getByText(DEFAULT_PROPS.breeder.address.province)).toBeInTheDocument()
@@ -77,5 +78,15 @@ describe('<Breeder />', () => {
     render(<Breeder {...DEFAULT_PROPS} contacts={contacts} />)
 
     expect(screen.getAllByTestId('breeder-phone')).toHaveLength(contacts.length)
+  })
+
+  it('does not render the address', () => {
+    const emptyAddress: any = {}
+    const breeder = { ...DEFAULT_PROPS.breeder, address: emptyAddress }
+
+    render(<Breeder {...DEFAULT_PROPS} breeder={breeder} />)
+
+    expect(screen.queryByTestId('breeder-location')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('breeder-address-details')).not.toBeInTheDocument()
   })
 })
