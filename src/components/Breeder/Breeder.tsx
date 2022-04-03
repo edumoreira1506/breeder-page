@@ -74,20 +74,21 @@ const Breeder: FC<BreederProps> = ({
 
   const linkBarItems = useMemo(() => ([
     ...contacts.filter((contact) => contact.type === BreederContactTypeEnum.WHATS_APP).map(contact => ({
-      children: <BsWhatsapp />,
+      children: <BsWhatsapp data-testid="breeder-whatsapp" />,
       href: `https://api.whatsapp.com/send?phone=55${contact.value.replace(/\D/g, '')}`
     })),
     ...contacts.filter((contact) => contact.type === BreederContactTypeEnum.PHONE).map(contact => ({
-      children: <AiFillPhone />,
+      children: <AiFillPhone data-testid="breeder-phone" />,
       href: `tel:${contact.value.replace(/\D/g, '')}`
     })),
     {
-      children: <HiLocationMarker />,
+      children: <HiLocationMarker data-testid="breeder-location" />,
       href: '#location'
     },
     {
-      children: <BsShareFill />,
-      onClick: handleShareBreeder
+      children: <BsShareFill data-testid="breeder-share" />,
+      onClick: handleShareBreeder,
+      identifier: 'breeder-share'
     }
   ]), [contacts])
   
