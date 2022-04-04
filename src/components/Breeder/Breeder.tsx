@@ -87,7 +87,8 @@ const Breeder: FC<BreederProps> = ({
     })),
     addressIsEmpty ? undefined : {
       children: <HiLocationMarker data-testid="breeder-location" />,
-      href: '#location'
+      href: '#location',
+      target: '_self',
     },
     {
       children: <BsShareFill data-testid="breeder-share" />,
