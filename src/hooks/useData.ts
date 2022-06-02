@@ -3,7 +3,7 @@ import { useQuery } from 'react-query'
 
 import ContentSearchClient from '../clients/ContentSearchClient'
 
-interface Data {
+export interface Data {
   breeder: IBreeder & { contacts: IBreederContact[] };
   poultries: IPoultry[];
 }
