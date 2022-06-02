@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { BreederProps } from './components/Breeder/Breeder'
 
 import BreederContainer from './containers/BreederContainer/BreederContainer'
+import { Data } from './hooks/useData'
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,11 @@ const queryClient = new QueryClient();
   { onViewPoultry, onEditPoultry }: {
     onViewPoultry: BreederProps['onViewPoultry'];
     onEditPoultry: BreederProps['onEditPoultry'];
+  },
+  {
+    breederData = {}
+  }: {
+    breederData: Partial<Data['breeder']>
   }
 ) => {
   const targetDocument = document.getElementById(containerId)
@@ -25,6 +31,7 @@ const queryClient = new QueryClient();
           breederId={breederId}
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
+          breederData={breederData}
         />
       </QueryClientProvider>,
       targetDocument,

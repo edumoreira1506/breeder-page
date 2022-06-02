@@ -1,18 +1,20 @@
 import React, { FC } from 'react'
 
 import Breeder, { BreederProps } from '../../components/Breeder/Breeder'
-import useData from '../../hooks/useData'
+import useData, { Data } from '../../hooks/useData'
 
 export interface BreederContainerProps {
   breederId: string;
   onViewPoultry?: BreederProps['onViewPoultry'];
   onEditPoultry?: BreederProps['onEditPoultry'];
+  breederData?: Partial<Data['breeder']>;
 }
 
 const BreederContainer: FC<BreederContainerProps> = ({
   breederId,
   onViewPoultry,
-  onEditPoultry
+  onEditPoultry,
+  breederData = {}
 }: BreederContainerProps) => {
   const { data, isLoading } = useData(breederId)
 
@@ -20,7 +22,7 @@ const BreederContainer: FC<BreederContainerProps> = ({
 
   return (
     <Breeder
-      breeder={data?.breeder}
+      breeder={{ ...data?.breeder, ...breederData }}
       contacts={data?.breeder?.contacts}
       poultries={data?.poultries}
       onViewPoultry={onViewPoultry}
