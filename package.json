@@ -5,7 +5,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
-    "@cig-platform/content-search-client": "^0.0.16",
+    "@cig-platform/content-search-client": "^0.0.25",
     "@cig-platform/context": "^0.1.7",
     "@cig-platform/enums": "^0.0.5",
     "@cig-platform/factories": "^0.0.20",
