@@ -13,14 +13,14 @@ const queryClient = new QueryClient();
   containerId: string,
   { breederId }: { breederId: string },
   { onViewPoultry, onEditPoultry }: {
-    onViewPoultry: BreederProps['onViewPoultry'];
-    onEditPoultry: BreederProps['onEditPoultry'];
-  },
+    onViewPoultry?: BreederProps['onViewPoultry'];
+    onEditPoultry?: BreederProps['onEditPoultry'];
+  } = {},
   {
     breederData = {}
   }: {
-    breederData: Partial<Data['breeder']>
-  }
+    breederData?: Partial<Data['breeder']>
+  } = {}
 ) => {
   const targetDocument = document.getElementById(containerId)
 
