@@ -34,18 +34,21 @@ describe('<Breeder />', () => {
         type: BreederContactTypeEnum.WHATS_APP,
         value: '(15) 99644-2031',
         id: '',
-        breederId: DEFAULT_PROPS.breeder.id
+        breederId: DEFAULT_PROPS.breeder.id,
+        createdAt: new Date()
       },
       {
         type: BreederContactTypeEnum.WHATS_APP,
         value: '(15) 99644-2032',
         id: '',
-        breederId: DEFAULT_PROPS.breeder.id
+        breederId: DEFAULT_PROPS.breeder.id,
+        createdAt: new Date()
       },{
         type: BreederContactTypeEnum.WHATS_APP,
         value: '(15) 99644-2033',
         id: '',
-        breederId: DEFAULT_PROPS.breeder.id
+        breederId: DEFAULT_PROPS.breeder.id,
+        createdAt: new Date()
       }
     ]
 
@@ -60,18 +63,21 @@ describe('<Breeder />', () => {
         type: BreederContactTypeEnum.PHONE,
         value: '(15) 3521-3556',
         id: '',
-        breederId: DEFAULT_PROPS.breeder.id
+        breederId: DEFAULT_PROPS.breeder.id,
+        createdAt: new Date()
       },
       {
         type: BreederContactTypeEnum.PHONE,
         value: '(15) 3521-3557',
         id: '',
-        breederId: DEFAULT_PROPS.breeder.id
+        breederId: DEFAULT_PROPS.breeder.id,
+        createdAt: new Date()
       },{
         type: BreederContactTypeEnum.PHONE,
         value: '(15) 3521-3558',
         id: '',
-        breederId: DEFAULT_PROPS.breeder.id
+        breederId: DEFAULT_PROPS.breeder.id,
+        createdAt: new Date()
       }
     ]
 

@@ -4,7 +4,7 @@ import { BsWhatsapp, BsShareFill } from 'react-icons/bs'
 import { AiFillPhone } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
 import copy from 'copy-to-clipboard'
-import { LinksBar } from '@cig-platform/ui'
+import { CommentList, LinksBar } from '@cig-platform/ui'
 import MicroFrontend from '@cig-platform/microfrontend-helper'
 import { BreederContactTypeEnum } from '@cig-platform/enums'
 
@@ -25,6 +25,8 @@ import {
   StyledContainer,
   StyledPoultries
 } from './Breeder.styles'
+import reviewToCommentItem from '../../formatters/reviewToCommentItem'
+import { Review } from '../../hooks/useData'
 
 export interface Poultry extends IPoultry {
   images?: IPoultryImage[];
@@ -34,6 +36,7 @@ export interface Poultry extends IPoultry {
 export interface BreederProps {
   breeder: IBreeder;
   poultries?: Poultry[];
+  reviews?: Review[];
   contacts?: IBreederContact[];
   onViewPoultry?: (a: { breederId: string; poultryId: string }) => void;
   onEditPoultry?: (a: { breederId: string; poultryId: string }) => void;
@@ -43,8 +46,11 @@ const Breeder: FC<BreederProps> = ({
   breeder,
   contacts = [],
   onViewPoultry,
-  onEditPoultry
+  onEditPoultry,
+  reviews = []
 }) => {
+  const formattedCommentList = useMemo(() => reviews.map(reviewToCommentItem), [reviews])
+
   const handleShareBreeder = useCallback(async () => {
     const url = `${MARKETPLACE_URL}/breeders/${breeder.id}`
 
@@ -144,6 +150,8 @@ const Breeder: FC<BreederProps> = ({
           <Address address={breeder.address} />
         )}
       </GalleryProvider>
+
+      <CommentList comments={formattedCommentList} />
     </StyledContainer>
   )
 }

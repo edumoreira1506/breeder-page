@@ -1329,10 +1329,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cig-platform/content-search-client@^0.0.25":
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/@cig-platform/content-search-client/-/content-search-client-0.0.25.tgz#13623d2a59937ca02556fe096b82309ba78ce866"
-  integrity sha512-/Jy7IoVR3v3+wq86wgFqhMs8i2uteCZ3jAv5H5TyXoBFHI677fodz6sadFV7yorqaTCPEFQaIGxo380QmacEaw==
+"@cig-platform/content-search-client@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@cig-platform/content-search-client/-/content-search-client-0.0.26.tgz#0f8596268110e79c527b4be043f372952d760ba8"
+  integrity sha512-y9jNMjH2PccyKJvretLTMz2thZYVbT9ViCKEjH83wEL5OWfzNtT4/a6zL/niN+pEHqS3/ZqnrkBKSP58Epi7fA==
   dependencies:
     "@babel/plugin-proposal-decorators" "^7.17.2"
     "@cig-platform/decorators" "^0.0.2"
@@ -1368,6 +1368,13 @@
     "@cig-platform/types" "^0.0.33"
     faker "^5.5.3"
 
+"@cig-platform/factories@^0.0.22":
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/@cig-platform/factories/-/factories-0.0.22.tgz#1b764e8a7b2fc9f0efbcfdb128a264f8866192ae"
+  integrity sha512-Yid5VYq/tUdj3dcM64twOt5ykCFocWatitBO6fR2D81mtBpwa/yNINe+Sks7lePQY39jvETdOquk9Iu2ta8UUg==
+  dependencies:
+    "@cig-platform/types" "^0.0.41"
+
 "@cig-platform/microfrontend-helper@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@cig-platform/microfrontend-helper/-/microfrontend-helper-0.0.3.tgz#15e5dc994cbcbbaa02f07a204a42be39693f2eb6"
@@ -1387,6 +1394,13 @@
   version "0.0.35"
   resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.35.tgz#0b81f67cbd7e99251f097269eed868d8748fa68f"
   integrity sha512-USWcf85/RL+nSMRbmLtfZhbKX4jJWev5igo0Z3EZPU7fNXZuqxl+PEBF/e/d41hEBGmnzXrHGJClcB3V+KRovg==
+  dependencies:
+    express "^4.17.3"
+
+"@cig-platform/types@^0.0.41":
+  version "0.0.41"
+  resolved "https://registry.yarnpkg.com/@cig-platform/types/-/types-0.0.41.tgz#36f18829b17adc914f6d840a5551a9c660d05b31"
+  integrity sha512-IVUOZQvuoSKa+zHHnQTn9kxvnLTEdwts4qhKP+Mu13wZ2xgEboWrfXs4ohTscMHOYj3xabahwT2VUox1Gv29bQ==
   dependencies:
     express "^4.17.3"
 
@@ -1619,6 +1633,11 @@
     js-yaml "^4.1.0"
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
+
+"@faker-js/faker@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.3.0.tgz#a508df35ded585c4e071cb5d9d7c89623c837fae"
+  integrity sha512-1W0PZezq2rxlAssoWemi9gFRD8IQxvf0FPL5Km3TOmGHFG7ib0TbFBJ0yC7D/1NsxunjNTK6WjUXV8ao/mKZ5w==
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
