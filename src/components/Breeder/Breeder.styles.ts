@@ -8,3 +8,8 @@ export const StyledContainer = styled.main`
 export const StyledPoultries = styled.div`
   overflow: hidden;
 `
+
+export const StyledComments = styled.div`
+  max-width: 1020px;
+  margin: 0 auto;
+`
