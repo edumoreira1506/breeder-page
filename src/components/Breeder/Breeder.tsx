@@ -22,6 +22,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import './breeder.css'
 
 import {
+  StyledComments,
   StyledContainer,
   StyledPoultries
 } from './Breeder.styles'
@@ -151,7 +152,9 @@ const Breeder: FC<BreederProps> = ({
         )}
       </GalleryProvider>
 
-      <CommentList comments={formattedCommentList} />
+      <StyledComments>
+        <CommentList comments={formattedCommentList} />
+      </StyledComments>
     </StyledContainer>
   )
 }

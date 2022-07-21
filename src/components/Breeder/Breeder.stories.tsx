@@ -1,4 +1,5 @@
 import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { breederFactory, poultryFactory } from '@cig-platform/factories'
 
 import Breeder from './Breeder'
@@ -6,9 +7,12 @@ import Breeder from './Breeder'
 export default {
   title: 'Breeder',
   component: Breeder,
-}
+} as ComponentMeta<typeof Breeder>
 
-const exampleProps = {
+const Template: ComponentStory<typeof Breeder> = (args) => <Breeder {...args} />
+
+export const Example = Template.bind({})
+Example.args = {
   breeder: {
     ...breederFactory({
       id: '50aed6ec-8744-476e-a5b8-6d47d4435825',
@@ -68,4 +72,3 @@ const exampleProps = {
     })
   })
 }
-export const Example = <Breeder {...exampleProps} />
