@@ -1,5 +1,5 @@
 import { IBreeder, IBreederContact, IPoultry, IReview } from '@cig-platform/types'
-import { useQuery } from 'react-query'
+import { useData as useDataFromDataHelper } from '@cig-platform/data-helper'
 
 import ContentSearchClient from '../clients/ContentSearchClient'
 
@@ -14,5 +14,10 @@ export interface Data {
 }
 
 export default function useData(breederId: string) {
-  return useQuery<Data>(['getBreederData', breederId], () => ContentSearchClient.getBreeder(breederId))
+  return useDataFromDataHelper<Data>(
+    'getBreederData',
+    () => ContentSearchClient.getBreeder(breederId),
+    [breederId],
+    {}
+  )
 }

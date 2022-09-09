@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClientProvider } from 'react-query'
+import { queryClient } from '@cig-platform/data-helper'
 
 import { BreederProps } from './components/Breeder/Breeder'
 
 import BreederContainer from './containers/BreederContainer/BreederContainer'
 import { Data } from './hooks/useData'
-
-const queryClient = new QueryClient();
 
 (window as any).renderBreederPage = (
   containerId: string,
