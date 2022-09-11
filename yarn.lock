@@ -1397,13 +1397,10 @@
   dependencies:
     "@cig-platform/types" "^0.0.41"
 
-"@cig-platform/microfrontend-helper@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@cig-platform/microfrontend-helper/-/microfrontend-helper-0.0.10.tgz#79485a32b768653fcaa0ff197b4bd2c199a748e2"
-  integrity sha512-od/DsC2uS5+/IdjLYzYwa1wIjaesjbsEsbn46DjtD2oE0k7s+J+j7da23I8vfshG77unWpNpj2eTgo1+us2igw==
-  dependencies:
-    react "^17.0.2"
-    react-scripts "^5.0.0"
+"@cig-platform/microfrontend-helper@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cig-platform/microfrontend-helper/-/microfrontend-helper-0.2.0.tgz#74b38ce206b21e93d395beb7d262b322c88f79ee"
+  integrity sha512-r/7msMk9xe2aNtyTZGZCbdzkf8upM4O6Er5fdO6ai7SAKItU5KbE395lFrdicgmYFhTC6aA6yyq2tbgMPHU18Q==
 
 "@cig-platform/types@^0.0.33":
   version "0.0.33"
@@ -12235,7 +12232,7 @@ react-refresh@^0.11.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-scripts@5.0.0, react-scripts@^5.0.0:
+react-scripts@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.0.tgz#6547a6d7f8b64364ef95273767466cc577cb4b60"
   integrity sha512-3i0L2CyIlROz7mxETEdfif6Sfhh9Lfpzi10CtcGs1emDQStmZfWjJbAIMtRD0opVUjQuFWqHZyRZ9PPzKCFxWg==
