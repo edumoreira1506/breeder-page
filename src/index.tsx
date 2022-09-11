@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { QueryClientProvider } from 'react-query'
 import { queryClient } from '@cig-platform/data-helper'
 
 import { BreederProps } from './components/Breeder/Breeder'
 
-import BreederContainer from './containers/BreederContainer/BreederContainer'
+import BreederContainer, { BreederContainerProps } from './containers/BreederContainer/BreederContainer'
 import { Data } from './hooks/useData'
 
 (window as any).renderBreederPage = (
   containerId: string,
-  { breederId }: { breederId: string },
+  { breederId, linkComponent = Fragment }: { breederId: string, linkComponent?: BreederContainerProps['linkComponent'] },
   { onViewPoultry, onEditPoultry }: {
     onViewPoultry?: BreederProps['onViewPoultry'];
     onEditPoultry?: BreederProps['onEditPoultry'];
@@ -31,6 +31,7 @@ import { Data } from './hooks/useData'
           onViewPoultry={onViewPoultry}
           onEditPoultry={onEditPoultry}
           breederData={breederData}
+          linkComponent={linkComponent}
         />
       </QueryClientProvider>,
       targetDocument,

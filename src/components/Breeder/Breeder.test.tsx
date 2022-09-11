@@ -1,11 +1,13 @@
 import { BreederContactTypeEnum } from '@cig-platform/enums'
 import { breederFactory } from '@cig-platform/factories'
 import { render, screen } from '@testing-library/react'
+import { Fragment } from 'react'
 
 import Breeder from './Breeder'
 
 const DEFAULT_PROPS = {
   breeder: breederFactory(),
+  linkComponent: Fragment
 }
 
 describe('<Breeder />', () => {

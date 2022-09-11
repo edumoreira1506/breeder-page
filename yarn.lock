@@ -1397,10 +1397,10 @@
   dependencies:
     "@cig-platform/types" "^0.0.41"
 
-"@cig-platform/microfrontend-helper@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@cig-platform/microfrontend-helper/-/microfrontend-helper-0.0.3.tgz#15e5dc994cbcbbaa02f07a204a42be39693f2eb6"
-  integrity sha512-cNzbHB4gf3i/D80GrRx98QDHi/GYtiCnk64okWRSc2d437+Xrktm7QedY6eXZk8YvJ5qDxGUkvGZUBaQ8lvAVA==
+"@cig-platform/microfrontend-helper@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@cig-platform/microfrontend-helper/-/microfrontend-helper-0.0.10.tgz#79485a32b768653fcaa0ff197b4bd2c199a748e2"
+  integrity sha512-od/DsC2uS5+/IdjLYzYwa1wIjaesjbsEsbn46DjtD2oE0k7s+J+j7da23I8vfshG77unWpNpj2eTgo1+us2igw==
   dependencies:
     react "^17.0.2"
     react-scripts "^5.0.0"
