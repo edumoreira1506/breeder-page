@@ -8,13 +8,15 @@ export interface BreederContainerProps {
   onViewPoultry?: BreederProps['onViewPoultry'];
   onEditPoultry?: BreederProps['onEditPoultry'];
   breederData?: Partial<Data['breeder']>;
+  linkComponent:  BreederProps['linkComponent']
 }
 
 const BreederContainer: FC<BreederContainerProps> = ({
   breederId,
   onViewPoultry,
   onEditPoultry,
-  breederData = {}
+  breederData = {},
+  linkComponent
 }: BreederContainerProps) => {
   const { data, isLoading } = useData(breederId)
 
@@ -27,6 +29,7 @@ const BreederContainer: FC<BreederContainerProps> = ({
       poultries={data?.poultries}
       onViewPoultry={onViewPoultry}
       onEditPoultry={onEditPoultry}
+      linkComponent={linkComponent}
     />
   )
 }

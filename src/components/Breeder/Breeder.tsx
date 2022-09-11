@@ -34,6 +34,13 @@ export interface Poultry extends IPoultry {
   mainImage?: string;
 }
 
+type LinkComponentProps = {
+  identifier: string;
+  params?: {
+    poultryId?: string
+  };
+};
+
 export interface BreederProps {
   breeder: IBreeder;
   poultries?: Poultry[];
@@ -41,6 +48,7 @@ export interface BreederProps {
   contacts?: IBreederContact[];
   onViewPoultry?: (a: { breederId: string; poultryId: string }) => void;
   onEditPoultry?: (a: { breederId: string; poultryId: string }) => void;
+  linkComponent: FC<LinkComponentProps>
 }
 
 const Breeder: FC<BreederProps> = ({
@@ -48,7 +56,8 @@ const Breeder: FC<BreederProps> = ({
   contacts = [],
   onViewPoultry,
   onEditPoultry,
-  reviews = []
+  reviews = [],
+  linkComponent
 }) => {
   const formattedCommentList = useMemo(() => reviews.map(reviewToCommentItem), [reviews])
 
@@ -75,8 +84,9 @@ const Breeder: FC<BreederProps> = ({
   ])
 
   const microFrontendParams = useMemo(() => ({
-    breederId: breeder?.id
-  }), [breeder?.id])
+    breederId: breeder?.id,
+    linkComponent,
+  }), [breeder?.id, linkComponent])
 
   const microFrontendCallbacks = useMemo<Record<string, any>>(() => ({
     onViewPoultry,
