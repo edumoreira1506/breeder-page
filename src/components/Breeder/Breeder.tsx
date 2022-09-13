@@ -1,10 +1,9 @@
-import React, { FC, ReactNode, useCallback, useMemo } from 'react'
+import React, { FC, ReactNode, useCallback, useMemo, useState } from 'react'
 import { IBreeder, IBreederContact, IPoultry, IPoultryImage } from '@cig-platform/types'
 import { BsWhatsapp, BsShareFill } from 'react-icons/bs'
 import { AiFillPhone } from 'react-icons/ai'
 import { HiLocationMarker } from 'react-icons/hi'
-import copy from 'copy-to-clipboard'
-import { CommentList, LinksBar } from '@cig-platform/ui'
+import { CommentList, LinksBar, SocialMediaShareModal } from '@cig-platform/ui'
 import MicroFrontend from '@cig-platform/microfrontend-helper'
 import { BreederContactTypeEnum } from '@cig-platform/enums'
 
@@ -59,13 +58,20 @@ const Breeder: FC<BreederProps> = ({
   reviews = [],
   linkComponent
 }) => {
+  const [isSocialMediaShareModalOpen, setIsSocialMediaShareModalOpen] = useState(false)
+
+  const url = `${MARKETPLACE_URL}/breeders/${breeder.id}`
+  const description = `${breeder.description}: ${url}`
+
   const formattedCommentList = useMemo(() => reviews.map(reviewToCommentItem), [reviews])
 
-  const handleShareBreeder = useCallback(async () => {
-    const url = `${MARKETPLACE_URL}/breeders/${breeder.id}`
+  const handleCloseSocialMediaShareModal = useCallback(() => {
+    setIsSocialMediaShareModalOpen(false)
+  }, [])
 
+  const handleShareBreeder = useCallback(async () => {
     if (navigator.share) {
-      const shareDetails = { url, title: breeder.name, text: `${breeder.description}: ${url}` }
+      const shareDetails = { url, title: breeder.name, text: description }
       
       try {
         await navigator.share(shareDetails)
@@ -73,11 +79,9 @@ const Breeder: FC<BreederProps> = ({
         console.error(error)
       }
     } else {
-      copy(url)
-
-      alert('Link copiado com sucesso!')
+      setIsSocialMediaShareModalOpen(true)
     }
-  }, [])
+  }, [url, description])
 
   const addressIsEmpty = useMemo(() => !Object.values(breeder?.address)?.filter(Boolean)?.length, [
     breeder?.address
@@ -121,6 +125,14 @@ const Breeder: FC<BreederProps> = ({
   
   return (
     <StyledContainer>
+      <SocialMediaShareModal
+        isOpen={isSocialMediaShareModalOpen}
+        onClose={handleCloseSocialMediaShareModal}
+        url={url}
+        description={description}
+        title={breeder?.name}
+      />
+
       <LinksBar items={linkBarItems} />
       
       <GalleryProvider>
